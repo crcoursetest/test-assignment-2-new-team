@@ -3,7 +3,12 @@
 	<div id='footer-container' class='footer-container'>
 		<div class='item'>
 			{% if self.url != '/' %}
-			<a href='{% if previous_blog == '/' %}/{% else %} {% pageurl previous_blog.first %} {% endif %}'>
+			<a href='{% if previous_blog == '/' %}/{% else %}{% pageurl previous_blog.first %}{% endif %}'>
+			{% if previous_blog.first.title %}
+				<p>{{ previous_blog.first.title }}</p>
+			{% else %}
+				<p>Home</p>
+			{% endif %}
 			<i class="nav-arrow fa fa-arrow-left"></i>
 			</a>
 			{% endif %}
@@ -13,7 +18,12 @@
 		</div>
 		<div class='item'>
 			{% if self.url != '/' %}
-			<a href='{% if next_blog == '/' %}/{% else %} {% pageurl next_blog.first %} {% endif %}'>
+			<a href='{% if next_blog == '/' %}/{% else %}{% pageurl next_blog.first %}{% endif %}'>
+			{% if next_blog.first.title %}
+				<p>{{ next_blog.first.title}}</p>
+			{% else %}
+				<p>Home</p>
+			{% endif %}
 			<i class="nav-arrow fa fa-arrow-right"></i>
 			</a>
 			{% endif %}

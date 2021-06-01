@@ -36,7 +36,7 @@ rsa==3.3
 simplejson==3.8.2
 six==1.9.0
 uritemplate==0.6
-urllib3==1.12
+urllib3==1.26.5
 wagalytics==0.7
 wagtail==2.0
 wagtailfontawesome==1.1.3
